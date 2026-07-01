@@ -20,11 +20,11 @@ Chiu uses the Spearman's ρ value to measure the similarity between the models' 
 
 I ran Chiu's experiment with newer models and found the gap had shrunk substantially (rho values displayed in the chart below). The strongest alignment came from GPT-5.4 Nano (ρ=0.656), nearly a full point higher than Sonnet 3.7's -0.318, and the trend across generations is roughly monotonic. Newer models have a much smaller stated-revealed value preference gap than older models.
 
-<img width="1665" height="601" alt="heatmap_stated" src="https://gist.github.com/user-attachments/assets/1cbbe290-3e48-4e37-b5ea-a4d4c79cb993" />
+<img width="1665" height="601" alt="heatmap_stated" src="heatmap_stated.png" />
 
 The models I tested varied significantly in their stated preferences. GPT-5.4 Nano was only modestly similar to Haiku 4.5 (ρ=0.191), while GPT 5.4 and Opus 4.7 were much closer (ρ=0.858). By contrast, the revealed preferences of every model I analyzed were almost identical. Every single model consistently valued privacy the most and creativity the least. There was some slight variation on values in the middle, but in general the results were very similar for all models.
 
-<img width="1662" height="601" alt="heatmap_revealed" src="https://gist.github.com/user-attachments/assets/6d85a025-5c8b-4bd4-bd49-1531a13ada48" />
+<img width="1662" height="601" alt="heatmap_revealed" src="heatmap_revealed.png" />
 
 ## Steering preferences
 
@@ -32,11 +32,11 @@ With these results, one natural follow up is to try to close the gap between mod
 
 I found some success steering the stated preferences to be closer to the revealed ones. I performed this experiment twice -- once with the system prompt containing the revealed preferences in order, and once in reversed order as a control. The gap between stated and revealed preferences roughly halved when using the forwards system prompt (Δρ=0.179), while the reversed system prompt had a much smaller effect (ρ=-0.041). 
 
-<img width="1668" height="601" alt="heatmap_steering_stated" src="https://gist.github.com/user-attachments/assets/78f14211-66ae-4aaa-b622-5f10733c3d75" />
+<img width="1668" height="601" alt="heatmap_steering_stated" src="heatmap_steering_stated.png" />
 
 By contrast, models' revealed preferences did not change from my intervention. Steering in both directions (forward and reversed) had virtually no impact on the revealed preferences. This suggests revealed preferences are more ingrained and a better representation of the model's values than the stated ones.
 
-<img width="1669" height="601" alt="heatmap_steering_revealed" src="https://gist.github.com/user-attachments/assets/0532b331-ce0d-4f2e-9df6-a2e9db4208e5" />
+<img width="1669" height="601" alt="heatmap_steering_revealed" src="heatmap_steering_revealed.png" />
 
 ## Further work
 
